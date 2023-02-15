@@ -1,3 +1,7 @@
 import { describe } from 'vitest';
 
-describe('indexLoaderFunction', () => {});
+describe('indexLoaderFunction', () => {
+  it('should be true', () => {
+    expect(true).toBeTruthy();
+  });
+});
