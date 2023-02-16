@@ -5,9 +5,10 @@ import {
   deserializeCookies,
   serializePreferences
 } from '~/services/cookie.server';
+import type Preferences from '~/models/Preferences.model';
 
 export interface IndexLoaderData {
-  foobar: string;
+  preferences: Preferences;
 }
 
 export default async function indexLoaderFunction({
@@ -17,7 +18,7 @@ export default async function indexLoaderFunction({
     const preferences = await deserializeCookies(request);
     preferences.foobar = 'foobarBarfoo';
 
-    return json({ foobar: preferences.foobar } as IndexLoaderData, {
+    return json({ preferences } as IndexLoaderData, {
       headers: {
         'Set-Cookie': await serializePreferences(preferences)
       }
