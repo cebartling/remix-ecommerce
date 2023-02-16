@@ -1,32 +1,17 @@
+import type { LoaderFunction } from '@remix-run/node';
+import type { IndexLoaderData } from '~/loaders/IndexLoaderFunction';
+import indexLoaderFunction from '~/loaders/IndexLoaderFunction';
+import { useLoaderData } from 'react-router';
+
+export const loader: LoaderFunction = indexLoaderFunction;
+
 export default function Index() {
+  const { foobar } = useLoaderData() as IndexLoaderData;
+
   return (
-    <div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.4' }}>
-      <h1 className='text-3xl font-bold underline'>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target='_blank'
-            href='https://remix.run/tutorials/blog'
-            rel='noreferrer'
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target='_blank'
-            href='https://remix.run/tutorials/jokes'
-            rel='noreferrer'
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target='_blank' href='https://remix.run/docs' rel='noreferrer'>
-            Remix Docs
-          </a>
-        </li>
-      </ul>
+    <div>
+      <h1 className="text-3xl font-bold underline">Welcome to Remix</h1>
+      <div>Foobar: {foobar}</div>
     </div>
   );
 }
