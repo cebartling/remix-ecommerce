@@ -9,7 +9,8 @@
     "dev:node": "cross-env NODE_ENV=development nodemon --require dotenv/config ./server.js --watch ./server.js",
     "dev:remix": "remix watch",
     "start": "cross-env NODE_ENV=production node ./server.js",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "test:cucumber": "npx cucumber-js --config cucumber/cucumber.json --profile default --publish-quiet"
   },
   "dependencies": {
     "@remix-run/express": "^1.13.0",
