@@ -13,6 +13,7 @@
     "test:cucumber": "npx cucumber-js --config cucumber/cucumber.json --profile default --publish-quiet"
   },
   "dependencies": {
+    "@material-tailwind/react": "^1.4.2",
     "@remix-run/express": "^1.13.0",
     "@remix-run/node": "^1.13.0",
     "@remix-run/react": "^1.13.0",
